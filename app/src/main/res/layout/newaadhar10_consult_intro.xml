@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorGrey"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/topdesign"
+                android:layout_width="fill_parent"
+                android:layout_height="200.0dip"
+                android:background="@drawable/newaadhar10_round_bottom_primary_25dp"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_marginStart="15.0dip"
+                    android:layout_marginTop="15.0dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30.0dip"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/welcome"
+                    android:textColor="@color/white"
+                    android:textSize="23.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/intro_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topdesign"
+                android:layout_marginTop="-40.0dip"
+                android:gravity="center"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip"
+                android:weightSum="2.0">
+
+                <LinearLayout
+
+                    android:id="@+id/intro_start"
+                    android:layout_width="0.0dip"
+                    android:layout_height="100.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/newaadhar10_cs_introback"
+
+                    android:orientation="vertical"
+                    android:padding="15.0dip">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="49dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newaadhar10_banneradd" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/nunito_bold"
+                        android:gravity="center"
+                        android:text="About Adhar loan"
+                        android:textColor="#000"
+                        android:textSize="15.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topdesign"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/qreka"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/intro_ll"
+                android:layout_marginTop="15dp"
+                android:layout_weight="2"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip"
+                android:weightSum="2.0">
+
+                <LinearLayout
+                    android:id="@+id/intro_share"
+                    android:layout_width="0.0dip"
+                    android:layout_height="100.0dip"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/newaadhar10_cs_introback"
+
+                    android:orientation="vertical"
+                    android:padding="15.0dip">
+
+                    <ImageView
+                        android:layout_width="30.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newaadhar10_ic_icon_share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10.0dip"
+                        android:text="Share App"
+                        android:textColor="#000"
+                        android:textSize="18.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/intro_rateus"
+                    android:layout_width="0.0dip"
+                    android:layout_height="100.0dip"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/newaadhar10_cs_introback"
+                    android:orientation="vertical"
+                    android:padding="15.0dip">
+
+                    <ImageView
+                        android:layout_width="30.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newaadhar10_ic_icon_rateus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10.0dip"
+                        android:text="Rate Our App"
+                        android:textColor="#000"
+                        android:textSize="18.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+</LinearLayout>

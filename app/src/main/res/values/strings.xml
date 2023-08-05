@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><string name="page_title">Loan On Aadhar</string>
+
+
+    <string name="hint_interest_percentage">INTEREST %</string>
+    <string name="welcome">Welcome To Adharcard Guide</string>
+    <string name="without_salary_slip">Without salary slip</string>
+    <string name="without_income_proof">Without income proof</string>
+    <string name="todo">TODO</string>
+    <string name="long_loan_time">Loan On Aadhar</string>
+    <string name="app_name">Loan On Adharcard</string>
+    <string name="_100_online_process">100 % online process</string>
+    <string name="apply_now">Apply Now</string>
+    <string name="reset_button_label">RESET</string>
+    <string name="interest_label">INTEREST</string>
+    <string name="total_amount_label">TOTAL AMOUNT</string>
+    <string name="calculate_button_label">CALCULATE</string>
+
+
+</resources>

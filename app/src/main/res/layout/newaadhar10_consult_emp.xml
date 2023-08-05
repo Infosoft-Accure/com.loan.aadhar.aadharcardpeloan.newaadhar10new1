@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorGrey">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/topdesign"
+        android:layout_width="fill_parent"
+        android:layout_height="120.0dip"
+        android:background="@drawable/newaadhar10_round_bottom_primary_25dp"
+        android:orientation="vertical">
+
+        <ImageView
+
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:layout_marginStart="15.0dip"
+            android:layout_marginTop="15.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10.0dip"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:text="Please Select Your Occupation Type"
+            android:textColor="@color/white"
+            android:textSize="18.0dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fl_b"
+        android:layout_below="@+id/topdesign">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topdesign"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/qreka"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="90.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/employment_self"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <ImageView
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="10.0dip"
+                            android:layout_weight="0.4"
+                            android:src="@drawable/newaadhar10_workingathome" />
+
+                        <TextView
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.6"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Self Employed"
+                            android:textColor="@android:color/black"
+                            android:textSize="18.0dip" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="90.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/employment_Student"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <ImageView
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="10.0dip"
+                            android:layout_weight="0.4"
+                            android:src="@drawable/newaadhar10_student" />
+
+                        <TextView
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.6"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Student"
+                            android:textColor="@android:color/black"
+                            android:textSize="18.0dip" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="90.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/employment_other"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <ImageView
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="10.0dip"
+                            android:layout_weight="0.4"
+                            android:src="@drawable/newaadhar10_question" />
+
+                        <TextView
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.6"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Others"
+                            android:textColor="@android:color/black"
+                            android:textSize="18.0dip" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+</RelativeLayout>

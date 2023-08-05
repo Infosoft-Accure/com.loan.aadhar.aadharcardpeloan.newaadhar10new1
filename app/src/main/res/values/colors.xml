@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#ff000000</color>
+    <color name="colorGrey">#FFFFFF</color>
+    <color name="purple_500">#ff3f1b87</color>
+    <color name="purple_700">#ff3f1b87</color>
+    <color name="purple_200">#ff210162</color>
+    <color name="color_Primary">#c72741</color>
+    <color name="teal_200">#ff03dac5</color>
+    <color name="teal_700">#ff018786</color>
+    <color name="white">#ffffffff</color>
+
+
+    <color name="app_theme_dark_color">#1694C6</color>
+
+    <color name="Btn_Text">#000000</color>
+</resources>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorGrey">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topdesign"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/color_Primary">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nunito_bold"
+                android:gravity="center"
+                android:text="@string/long_loan_time"
+                android:textColor="@color/white"
+                android:textSize="18.0dip" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/fl_adplaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topdesign"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/qreka"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/fl_b"
+        android:layout_below="@+id/fl_adplaceholder"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_width="match_parent"
+                android:layout_height="60.0dip"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:text="1. Do You Have Active Loans ?"
+                android:textColor="@color/black"
+                android:textSize="20.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_Yes"
+                android:layout_width="0dp"
+                android:layout_height="60.0dip"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:text="Yes"
+                android:textColor="@color/black" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_No"
+                android:layout_width="0dp"
+                android:layout_height="60.0dip"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+
+                android:backgroundTint="@color/white"
+                android:text="No"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+</RelativeLayout>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorGrey">
+
+
+    <LinearLayout
+        android:id="@+id/dash_top"
+        android:layout_width="fill_parent"
+        android:layout_height="180.0dip"
+
+        android:background="@color/color_Primary"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:layout_margin="10.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:textSize="28.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3.0dip"
+            android:fontFamily="@font/nunito"
+            android:text="Select category as per your need"
+            android:textColor="@color/white"
+            android:textSize="18.0dip" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/fl_b"
+        android:layout_below="@+id/dash_top">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/qreka"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="80.0dip"
+                    android:layout_marginTop="10.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_llHomeLoan"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:weightSum="3.0">
+
+                        <com.google.android.material.card.MaterialCardView
+
+                            style="?attr/materialCardViewElevatedStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="#CFCFCF"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/newaadhar10_ic_home" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="2.2"
+                            android:backgroundTint="#CFCFCF">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10.0dip"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="Home Loan"
+                                android:textColor="@color/black"
+                                android:textSize="16.0dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="12dp"
+                            android:layout_weight="0.3"
+                            android:background="#DBD6D6"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24.0dip"
+                                android:layout_height="24.0dip"
+                                android:src="@drawable/newaadhar10_ic_circle_check" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="80.0dip"
+                    android:layout_marginTop="10.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_llCarLoan"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:weightSum="3.0">
+
+                        <com.google.android.material.card.MaterialCardView
+
+                            style="?attr/materialCardViewElevatedStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="#CFCFCF"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/newaadhar10_ic_car" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="2.2"
+                            android:backgroundTint="#CFCFCF">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10.0dip"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="Car Loan"
+                                android:textColor="@color/black"
+                                android:textSize="16.0dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="12dp"
+                            android:layout_weight="0.3"
+                            android:background="#DBD6D6"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24.0dip"
+                                android:layout_height="24.0dip"
+                                android:src="@drawable/newaadhar10_ic_circle_check" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="80.0dip"
+                    android:layout_marginTop="10.0dip"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_llNewLoan"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:weightSum="3.0">
+
+                        <com.google.android.material.card.MaterialCardView
+
+                            style="?attr/materialCardViewElevatedStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="#CFCFCF"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/newaadhar10_ic_rupee" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="2.2"
+                            android:backgroundTint="#CFCFCF">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10.0dip"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="New Loan App"
+                                android:textColor="@color/black"
+                                android:textSize="16.0dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="12dp"
+                            android:layout_weight="0.3"
+                            android:background="#DBD6D6"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24.0dip"
+                                android:layout_height="24.0dip"
+                                android:src="@drawable/newaadhar10_ic_circle_check" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="80.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_llHelpSupport"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:weightSum="3.0">
+
+                        <com.google.android.material.card.MaterialCardView
+
+                            style="?attr/materialCardViewElevatedStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="#CFCFCF"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/newaadhar10_ic_help" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="2.2"
+                            android:backgroundTint="#CFCFCF">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10.0dip"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="Help &amp; Support"
+                                android:textColor="@color/black"
+                                android:textSize="16.0dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="12dp"
+                            android:layout_weight="0.3"
+                            android:background="#DBD6D6"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24.0dip"
+                                android:layout_height="24.0dip"
+                                android:src="@drawable/newaadhar10_ic_circle_check"
+                                android:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+</RelativeLayout>

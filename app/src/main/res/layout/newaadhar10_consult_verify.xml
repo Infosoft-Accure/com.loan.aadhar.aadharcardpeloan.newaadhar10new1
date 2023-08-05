@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/vrfy_rlBanner"
+        android:layout_width="fill_parent"
+        android:layout_height="170.0dip"
+        android:background="@drawable/newaadhar10_cs_dash"
+        android:backgroundTint="@color/color_Primary">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vrfy_vp2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@id/vrfy_llDots"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vrfy_rlBanner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10.0dip"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topdesign"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/qreka"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vrfy_rvList"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/vrfy_llDots"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginEnd="10.0dip" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vrfy_rvList"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+</LinearLayout>

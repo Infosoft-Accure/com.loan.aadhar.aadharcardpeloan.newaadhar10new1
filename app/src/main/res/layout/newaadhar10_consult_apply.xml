@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+
+    android:layout_height="fill_parent"
+    android:background="@color/colorGrey">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fl_b"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffd5d5d5"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200.0dip"
+                android:background="@drawable/newaadhar10_round_bottom_primary_25dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
+                    android:gravity="center"
+                    android:text="Easy And Safe Apply Without Credit Score !"
+                    android:textColor="@color/white"
+                    android:textSize="20.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topdesign"
+                android:layout_marginStart="30.0dip"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginTop="-30.0dip"
+                android:layout_marginEnd="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/qreka"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+               android:layout_margin="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/newaadhar10_banner"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20.0dip">
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/intro_llBtnNext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+
+                        android:background="@color/color_Primary"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:fontFamily="@font/nunito_bold"
+                            android:gravity="center"
+                            android:text="@string/apply_now"
+                            android:textColor="@color/white"
+                            android:textSize="18.0sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15.0dip"
+                            android:layout_marginLeft="15.0dip"
+                            android:clickable="false"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/newaadhar10_ic_right_arrow_white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30.0dip"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginEnd="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginBottom="20.0dip"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15.0dip">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In 3 simplet steps"
+                            android:textColor="@color/color_Primary"
+                            android:textSize="17.0dip"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15.0dip"
+                            android:src="@drawable/newaadhar10_ic_circle_check" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:gravity="center"
+                            android:text="@string/_100_online_process"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15.0dip"
+                            android:src="@drawable/newaadhar10_ic_circle_check" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:gravity="center"
+                            android:text="@string/without_income_proof"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15.0dip"
+                            android:src="@drawable/newaadhar10_ic_circle_check" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:gravity="center"
+                            android:text="@string/without_salary_slip"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/newaadhar10_qb2"
+        android:gravity="bottom"
+        android:visibility="visible" />
+
+</RelativeLayout>

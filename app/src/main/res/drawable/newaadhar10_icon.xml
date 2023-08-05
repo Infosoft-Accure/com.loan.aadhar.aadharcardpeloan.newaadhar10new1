@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/newaadhar10_baseline_arrow_back_ios_25"
+        android:width="36dp"
+        android:height="36dp"/>
+</layer-list>

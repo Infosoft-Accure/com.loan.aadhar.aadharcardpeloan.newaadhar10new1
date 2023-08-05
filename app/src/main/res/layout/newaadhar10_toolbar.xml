@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/page_title"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleCentered="true"
+        app:navigationIcon="@drawable/newaadhar10_icon"
+>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+</LinearLayout>
