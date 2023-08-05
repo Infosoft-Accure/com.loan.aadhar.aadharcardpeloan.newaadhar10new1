@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "com.loan.aadhar.aadharcardpeloan.newaadhar10new"
+rootProject.name = "com.loan.aadhar.aadharcardpeloan.newaadhar10new1"
 include ':app'
 include ':rating-library'

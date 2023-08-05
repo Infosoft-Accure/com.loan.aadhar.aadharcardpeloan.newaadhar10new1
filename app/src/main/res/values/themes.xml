@@ -45,6 +45,6 @@
     </style>
 
     <style name="native_visible" >
-        <item name="android:visibility">visible</item>
+        <item name="android:visibility">gone</item>
     </style>
 </resources>
