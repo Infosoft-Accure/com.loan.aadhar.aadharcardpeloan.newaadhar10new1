@@ -99,11 +99,6 @@ private SharedPreferences sharedPreferences;
             public void onClick(View v) {
                 onBackPressed();
 
-
-
-                ShowFullAds();
-
-
             }
         });
 
@@ -114,11 +109,6 @@ private SharedPreferences sharedPreferences;
 
 
         public void onClick(View v) {
-
-
-
-
-            ShowFullAds();
 
             findViewById(R.id.fl_adplaceholder).setOnClickListener(new OnClickListener() {
                 @Override
