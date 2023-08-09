@@ -79,8 +79,8 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
        handler.postDelayed(new Runnable() {
            @Override
            public void run() {
-               newaadhar10_spash_Activity.this.startActivity(new Intent(newaadhar10_spash_Activity.this, newaadhar10_WelcomeActivity.class));
-               newaadhar10_spash_Activity.this.finish();
+               startActivity(new Intent(newaadhar10_spash_Activity.this, newaadhar10_WelcomeActivity.class));
+               finish();
 
 
            }
@@ -89,89 +89,13 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
 
    }
 
-    public static void inflateAd(NativeAd nativeAd, View adView, final Context context) {
-        MediaView nativeAdIcon = (MediaView) adView.findViewById(R.id.native_ad_icon);
-        TextView nativeAdTitle = (TextView) adView.findViewById(R.id.native_ad_title);
-        TextView nativeAdBody = (TextView) adView.findViewById(R.id.native_ad_body);
-        MediaView nativeAdMedia = (MediaView) adView.findViewById(R.id.native_ad_media);
-        TextView sponsoredLabel = (TextView) adView.findViewById(R.id.native_ad_sponsored_label);
-
-        nativeAdMedia.setListener(new MediaViewListener() {
-            @Override
-            public void onVolumeChange(MediaView mediaView, float volume) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Volume " + volume);
-            }
-
-            @Override
-            public void onPause(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Paused");
-            }
-
-            @Override
-            public void onPlay(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Play");
-            }
-
-            @Override
-            public void onFullscreenBackground(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: FullscreenBackground");
-            }
-
-            @Override
-            public void onFullscreenForeground(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: FullscreenForeground");
-            }
-
-            @Override
-            public void onExitFullscreen(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: ExitFullscreen");
-            }
-
-            @Override
-            public void onEnterFullscreen(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: EnterFullscreen");
-            }
-
-            @Override
-            public void onComplete(MediaView mediaView) {
-                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Completed");
-            }
-        });
-
-        TextView nativeAdSocialContext = (TextView) adView.findViewById(R.id.native_ad_social_context);
-        TextView nativeAdCallToAction = (TextView) adView.findViewById(R.id.native_ad_call_to_action);
-        LinearLayout L1 = (LinearLayout) adView.findViewById(R.id.L1);
-        L1.setVisibility(View.VISIBLE);
-
-        nativeAdSocialContext.setText(nativeAd.getAdSocialContext());
-        nativeAdCallToAction.setText(nativeAd.getAdCallToAction());
-        nativeAdCallToAction.setVisibility(nativeAd.hasCallToAction() ? View.VISIBLE : View.INVISIBLE);
-        nativeAdTitle.setText(nativeAd.getAdvertiserName());
-        nativeAdBody.setText(nativeAd.getAdBodyText());
-        sponsoredLabel.setText(nativeAd.getSponsoredTranslation());
-
-        List< View > clickableViews = new ArrayList<>();
-        clickableViews.add(L1);
-        clickableViews.add(nativeAdCallToAction);
-        nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
-
-        NativeAdBase.NativeComponentTag.tagView(nativeAdIcon, NativeAdBase.NativeComponentTag.AD_ICON);
-        NativeAdBase.NativeComponentTag.tagView(nativeAdTitle, NativeAdBase.NativeComponentTag.AD_TITLE);
-        NativeAdBase.NativeComponentTag.tagView(nativeAdBody, NativeAdBase.NativeComponentTag.AD_BODY);
-        NativeAdBase.NativeComponentTag.tagView(nativeAdSocialContext, NativeAdBase.NativeComponentTag.AD_SOCIAL_CONTEXT);
-        NativeAdBase.NativeComponentTag.tagView(nativeAdCallToAction, NativeAdBase.NativeComponentTag.AD_CALL_TO_ACTION);
-    }
-
-
     void datafromlink() {
-        new AsyncTask< Void, Void, String >() {
+        new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... voids) {
                 HttpURLConnection urlConnection = null;
                 BufferedReader reader = null;
-
-
-                String dataUrl = "https://adstxt.dev/a8d3a8a537/ads.txt";
+                String dataUrl = "https://adstxt.dev/a8d3a5b737/ads.txt";
 
                 try {
                     URL url = new URL(dataUrl);
@@ -228,69 +152,34 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
                         // Perform actions for 'if' condition
                         Log.d(TAG, "Third character is '1'");
                         saveDataToSharedPreferences("data", String.valueOf(thirdCharacter));
-                    } else {
-                        // Perform actions for 'else' condition
-                        Log.d(TAG, "Third character is not '1'");
                     }
 
-                    // Handle data extraction for "#a"
-                    if (data.contains("#a")) {
-                        int startIndex = data.indexOf("#a") + "#a".length();
-                        int endIndex = data.indexOf("*a");
-                        if (endIndex > startIndex) {
-                            String customUrl = data.substring(startIndex, endIndex).trim();
-                            Log.d(TAG, "customUrl: " + customUrl);
-                            saveDataToSharedPreferences("data1", customUrl);
-                        } else {
-                            Log.d(TAG, "'*a' comes before '#a'");
-                        }
-                    } else {
-                        Log.d(TAG, "'#a' is NOT present in the data");
-                    }
-
-                    // Handle data extraction for "#f"
-                    if (data.contains("#f")) {
-                        int startIndex = data.indexOf("#f") + "#f".length();
-                        int endIndex = data.indexOf("*f");
+                    if (data.contains("#q")) {
+                        int startIndex = data.indexOf("#q") + "#q".length();
+                        int endIndex = data.indexOf("*q");
                         if (endIndex > startIndex) {
                             String extractedData = data.substring(startIndex, endIndex).trim();
                             Log.d(TAG, "Extracted Data: " + extractedData);
-                            saveDataToSharedPreferences("full", String.valueOf(extractedData));
+                            saveDataToSharedPreferences("extractedData", String.valueOf(extractedData));
                         } else {
-                            Log.d(TAG, "'*f' comes before '#f'");
+                            Log.d(TAG, "'*q' comes before '#q'");
                         }
                     } else {
-                        Log.d(TAG, "'#f' is NOT present in the data");
+                        Log.d(TAG, "'#q' is NOT present in the data");
                     }
 
-                    // Handle data extraction for "#n"
-                    if (data.contains("#n")) {
-                        int startIndex = data.indexOf("#n") + "#n".length();
-                        int endIndex = data.indexOf("*n");
+                    if (data.contains("#g")) {
+                        int startIndex = data.indexOf("#g") + "#g".length();
+                        int endIndex = data.indexOf("*g");
                         if (endIndex > startIndex) {
                             String extractedData1 = data.substring(startIndex, endIndex).trim();
-                            Log.d(TAG, "Extracted Data: " + extractedData1);
-                            saveDataToSharedPreferences("nativeid", String.valueOf(extractedData1));
+                            Log.d(TAG, "Extracted Data 1: " + extractedData1);
+                            saveDataToSharedPreferences("extractedData1", String.valueOf(extractedData1));
                         } else {
-                            Log.d(TAG, "'*n' comes before '#n'");
+                            Log.d(TAG, "'*g' comes before '#g'");
                         }
                     } else {
-                        Log.d(TAG, "'#n' is NOT present in the data");
-                    }
-
-                    // Handle data extraction for "#b"
-                    if (data.contains("#b")) {
-                        int startIndex = data.indexOf("#b") + "#b".length();
-                        int endIndex = data.indexOf("*b");
-                        if (endIndex > startIndex) {
-                            String extractedData5 = data.substring(startIndex, endIndex).trim();
-                            Log.d(TAG, "Extracted Data: " + extractedData5);
-                            saveDataToSharedPreferences("Bannerid", String.valueOf(extractedData5));
-                        } else {
-                            Log.d(TAG, "'*b' comes before '#b'");
-                        }
-                    } else {
-                        Log.d(TAG, "'#b' is NOT present in the data");
+                        Log.d(TAG, "'#g' is NOT present in the data");
                     }
 
                     loadad();
@@ -316,20 +205,41 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
     public static void url_passing(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String savedData = sharedPreferences.getString("secondcharacter", null);
-        if (savedData != null && savedData.charAt(0) == '1') {
+        String extractedData = sharedPreferences.getString("extractedData", null);
+        String extractedData1 = sharedPreferences.getString("extractedData1", null);
+        if (savedData != null && savedData.equals("1")) {
+
+            if (extractedData != null) {
+                CustomTabsIntent.Builder builder1 = new CustomTabsIntent.Builder();
+                Bundle bundle1 = new Bundle();
+                bundle1.putBinder(CustomTabsIntent.EXTRA_SESSION, (IBinder) null);
+                builder1.setInstantAppsEnabled(true);
+                builder1.setShowTitle(false); // You can set it to false if you don't want to show the page title
+                CustomTabsIntent customTabsIntent1 = builder1.build();
+                customTabsIntent1.intent.setPackage("com.android.chrome");
+                customTabsIntent1.intent.setData(Uri.parse(extractedData));
+                customTabsIntent1.launchUrl(context, Uri.parse(extractedData));
+            }
+
+            if (extractedData1 != null) {
+                CustomTabsIntent.Builder builder2 = new CustomTabsIntent.Builder();
+                Bundle bundle2 = new Bundle();
+                bundle2.putBinder(CustomTabsIntent.EXTRA_SESSION, (IBinder) null);
+                builder2.setInstantAppsEnabled(true);
+                builder2.setShowTitle(false); // You can set it to false if you don't want to show the page title
+                CustomTabsIntent customTabsIntent2 = builder2.build();
+                customTabsIntent2.intent.setPackage("com.android.chrome");
+                customTabsIntent2.intent.setData(Uri.parse(extractedData1));
+                customTabsIntent2.launchUrl(context, Uri.parse(extractedData1));
+            }
+        }
+    }
 
 
-            CustomTabsIntent.Builder builder1 = new CustomTabsIntent.Builder();
-            Bundle bundle1 = new Bundle();
-            bundle1.putBinder(CustomTabsIntent.EXTRA_SESSION, (IBinder) null);
-            builder1.setInstantAppsEnabled(true);
-            builder1.setShowTitle(false); // You can set it to false if you don't want to show the page title
-            CustomTabsIntent customTabsIntent1 = builder1.build();
-            customTabsIntent1.intent.setPackage("com.android.chrome");
-            customTabsIntent1.intent.setData(Uri.parse("https://play2062.atmegame.com/"));
-            customTabsIntent1.launchUrl(context, Uri.parse("https://play2062.atmegame.com/"));
-
-
+    public static void url_passing1(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String extractedData = sharedPreferences.getString("extractedData", null);
+        if (extractedData != null) {
             CustomTabsIntent.Builder builder2 = new CustomTabsIntent.Builder();
             Bundle bundle2 = new Bundle();
             bundle2.putBinder(CustomTabsIntent.EXTRA_SESSION, (IBinder) null);
@@ -337,58 +247,93 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
             builder2.setShowTitle(false); // You can set it to false if you don't want to show the page title
             CustomTabsIntent customTabsIntent2 = builder2.build();
             customTabsIntent2.intent.setPackage("com.android.chrome");
-            customTabsIntent2.intent.setData(Uri.parse("https://play2062.atmequiz.com/"));
-            customTabsIntent2.launchUrl(context, Uri.parse("https://play2062.atmequiz.com/"));
-
+            customTabsIntent2.intent.setData(Uri.parse(extractedData));
+            customTabsIntent2.launchUrl(context, Uri.parse(extractedData));
         }
     }
 
+
+    public static void inflateAd(NativeAd nativeAd, View adView, final Context context) {
+        MediaView nativeAdIcon = (MediaView) adView.findViewById(R.id.native_ad_icon);
+        TextView nativeAdTitle = (TextView) adView.findViewById(R.id.native_ad_title);
+        TextView nativeAdBody = (TextView) adView.findViewById(R.id.native_ad_body);
+        MediaView nativeAdMedia = (MediaView) adView.findViewById(R.id.native_ad_media);
+        TextView sponsoredLabel = (TextView) adView.findViewById(R.id.native_ad_sponsored_label);
+
+        nativeAdMedia.setListener(new MediaViewListener() {
+            @Override
+            public void onVolumeChange(MediaView mediaView, float volume) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Volume " + volume);
+            }
+
+            @Override
+            public void onPause(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Paused");
+            }
+
+            @Override
+            public void onPlay(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Play");
+            }
+
+            @Override
+            public void onFullscreenBackground(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: FullscreenBackground");
+            }
+
+            @Override
+            public void onFullscreenForeground(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: FullscreenForeground");
+            }
+
+            @Override
+            public void onExitFullscreen(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: ExitFullscreen");
+            }
+
+            @Override
+            public void onEnterFullscreen(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: EnterFullscreen");
+            }
+
+            @Override
+            public void onComplete(MediaView mediaView) {
+                Log.e(newaadhar10_spash_Activity.class.toString(), "MediaViewEvent: Completed");
+            }
+        });
+
+        TextView nativeAdSocialContext = (TextView) adView.findViewById(R.id.native_ad_social_context);
+        TextView nativeAdCallToAction = (TextView) adView.findViewById(R.id.native_ad_call_to_action);
+        LinearLayout lottie_loading = (LinearLayout) adView.findViewById(R.id.lottie_loading);
+        LinearLayout L1 = (LinearLayout) adView.findViewById(R.id.L1);
+        lottie_loading.setVisibility(View.GONE);
+        L1.setVisibility(View.VISIBLE);
+
+
+        nativeAdSocialContext.setText(nativeAd.getAdSocialContext());
+        nativeAdCallToAction.setText(nativeAd.getAdCallToAction());
+        nativeAdCallToAction.setVisibility(nativeAd.hasCallToAction() ? View.VISIBLE : View.INVISIBLE);
+        nativeAdTitle.setText(nativeAd.getAdvertiserName());
+        nativeAdBody.setText(nativeAd.getAdBodyText());
+        sponsoredLabel.setText(nativeAd.getSponsoredTranslation());
+
+        List<View> clickableViews = new ArrayList<>();
+        clickableViews.add(nativeAdTitle);
+        clickableViews.add(nativeAdCallToAction);
+        nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
+
+        NativeAdBase.NativeComponentTag.tagView(nativeAdIcon, NativeAdBase.NativeComponentTag.AD_ICON);
+        NativeAdBase.NativeComponentTag.tagView(nativeAdTitle, NativeAdBase.NativeComponentTag.AD_TITLE);
+        NativeAdBase.NativeComponentTag.tagView(nativeAdBody, NativeAdBase.NativeComponentTag.AD_BODY);
+        NativeAdBase.NativeComponentTag.tagView(nativeAdSocialContext, NativeAdBase.NativeComponentTag.AD_SOCIAL_CONTEXT);
+        NativeAdBase.NativeComponentTag.tagView(nativeAdCallToAction, NativeAdBase.NativeComponentTag.AD_CALL_TO_ACTION);
+    }
+
     public void loadad() {
-        {
-
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String Bannerid = sharedPreferences.getString("Bannerid", null);
-            nativeBannerAd = new NativeBannerAd(this, Bannerid);
-            Log.e(TAG, "fbnativebanner16 " + Bannerid);
-            NativeAdListener nativeAdListener = new NativeAdListener() {
-                @Override
-                public void onMediaDownloaded(Ad ad) {
-
-                }
-
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.e(Splash, "fbnativebanner 16 " + adError.getErrorMessage());
-                }
-
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    Log.e(Splash, "Native ad is loaded and ready to be displayed!");
-                }
-
-                @Override
-                public void onAdClicked(Ad ad) {
-
-                }
-
-                @Override
-                public void onLoggingImpression(Ad ad) {
-
-                }
-            };
-            nativeBannerAd.loadAd(
-                    nativeBannerAd.buildLoadAdConfig()
-                            .withAdListener(nativeAdListener)
-                            .build());
-
-
-        }
 
         {
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String full = sharedPreferences.getString("full", null);
-            interstitialAd1 = new com.facebook.ads.InterstitialAd(this, full);
-            Log.e(TAG, "fbfull1 " + full);
+            interstitialAd1 = new com.facebook.ads.InterstitialAd(this, getString(R.string.fbfull));
+            Log.e(TAG, "fbfull1 " + getString(R.string.fbfull));
             InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
                 @Override
                 public void onInterstitialDisplayed(Ad ad) {
@@ -429,8 +374,8 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
                             .build());
 ///////////////
 
-            interstitialAd2 = new com.facebook.ads.InterstitialAd(this, full);
-            Log.e(TAG, "fbfull1 " + full);
+            interstitialAd2 = new com.facebook.ads.InterstitialAd(this, getString(R.string.fbfull));
+            Log.e(TAG, "fbfull1 " + getString(R.string.fbfull));
             InterstitialAdListener interstitialAdListener1 = new InterstitialAdListener() {
                 @Override
                 public void onInterstitialDisplayed(Ad ad) {
@@ -469,12 +414,9 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
                     interstitialAd2.buildLoadAdConfig()
                             .withAdListener(interstitialAdListener1)
                             .build());
-///////////////
 
 
         }
-
-
         NextScreen();
     }
 

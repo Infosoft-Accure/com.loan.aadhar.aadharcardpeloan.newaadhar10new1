@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources><string name="page_title">Loan On Aadhar</string>
 
+    <string name="fbfull">711816833685108_711817070351751</string>
+    <string name="fbnative">711816833685108_711817140351744</string>
+    <string name="fbbanner">711816833685108_711817027018422</string>
 
     <string name="hint_interest_percentage">INTEREST %</string>
     <string name="welcome">Welcome To Adharcard Guide</string>

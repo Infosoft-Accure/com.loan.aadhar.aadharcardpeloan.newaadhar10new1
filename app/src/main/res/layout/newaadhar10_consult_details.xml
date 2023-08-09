@@ -448,6 +448,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/details_llLoanTerms"
                         android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
                         android:inputType="textMultiLine"
                         android:justificationMode="inter_word"
                         android:text="2% Processing Fees"

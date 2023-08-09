@@ -43,19 +43,19 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15.0dip">
 
             <FrameLayout
                 android:id="@+id/fl_adplaceholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/topdesign"
-                android:layout_marginStart="30.0dip"
-                android:layout_marginLeft="30.0dip"
-                android:layout_marginTop="-30.0dip"
-                android:layout_marginEnd="30.0dip"
-                android:layout_marginRight="30.0dip"
-                android:layout_marginBottom="20.0dip"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -64,6 +64,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="fill_parent"

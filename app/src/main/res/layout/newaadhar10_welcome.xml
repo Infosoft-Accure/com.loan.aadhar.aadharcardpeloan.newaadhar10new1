@@ -17,13 +17,8 @@
         android:layout_below="@+id/topdesign"
         android:layout_margin="10dp"
         android:orientation="vertical"
+        android:background="@drawable/newaadhar10_banner"
         android:visibility="visible">
-
-        <ImageView
-            android:id="@+id/qreka"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/newaadhar10_banner" />
     </FrameLayout>
 
 

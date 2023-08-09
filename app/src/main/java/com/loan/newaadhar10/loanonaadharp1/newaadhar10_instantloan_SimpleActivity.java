@@ -2,6 +2,7 @@ package com.loan.newaadhar10.loanonaadharp1;
 
 import static com.loan.newaadhar10.loanonaadharp1.newaadhar10_spash_Activity.inflateAd;
 import static com.loan.newaadhar10.loanonaadharp1.newaadhar10_spash_Activity.url_passing;
+import static com.loan.newaadhar10.loanonaadharp1.newaadhar10_spash_Activity.url_passing1;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -42,6 +43,7 @@ private SharedPreferences sharedPreferences;
     FrameLayout nativeBannerContainer;
     LinearLayout adView1, L1, L2;
     FrameLayout nativeAdContainer;
+    private com.facebook.ads.AdView bannerAdContainer;
     FrameLayout frameLayout;
     NativeAd nativeAd1;
     InterstitialAd interstitialAd;
@@ -68,8 +70,14 @@ private SharedPreferences sharedPreferences;
 
 
         loadfbNativeAd();
-        showfbNativeBanner();
-        ShowFullAds();
+        showfbbanner();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String thirdchar = sharedPreferences.getString("data", null);
+        if (thirdchar != null && thirdchar.equals("1")) {
+            url_passing1(this);
+        } else {
+            ShowFullAds();
+        }
 
         this.r3 = (LinearLayout) findViewById(R.id.container_view);
 //        this.mScrollView.setSmoothScrollingEnabled(true);
@@ -193,23 +201,23 @@ private SharedPreferences sharedPreferences;
 
     public void onBackPressed() {
         super.onBackPressed();
-
-
-        ShowFullAds();
-
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String thirdchar = sharedPreferences.getString("data", null);
+        if (thirdchar != null && thirdchar.equals("1")) {
+            url_passing1(this);
+        } else {
+            ShowFullAds();
+        }
 
     }
 
     public void loadfbNativeAd() {
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String nativeid = sharedPreferences.getString("nativeid", null);
-
-        Log.e(TAG, "fbnative1 " + nativeid);
+        Log.e(TAG, "fbnative1 " + getString(R.string.fbnative));
         nativeAdContainer = findViewById(R.id.fl_adplaceholder);
         LayoutInflater inflater = this.getLayoutInflater();
-        adView1 = (LinearLayout) inflater.inflate(R.layout.newaadhar10_native_ad_layout18, nativeAdContainer, false);
+        adView1 = (LinearLayout) inflater.inflate(R.layout.newaadhar10_native_ad_layout, nativeAdContainer, false);
         nativeAdContainer.addView(adView1);
-        nativeAd1 = new NativeAd(getApplicationContext(), nativeid);
+        nativeAd1 = new NativeAd(getApplicationContext(), getString(R.string.fbnative));
         NativeAdListener nativeAdListener = new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
@@ -231,6 +239,9 @@ private SharedPreferences sharedPreferences;
 
                     return;
                 }
+
+
+                nativeAdContainer.setBackground(null);
                 inflateAd(nativeAd1, adView1, getApplicationContext());
             }
 
@@ -256,65 +267,47 @@ private SharedPreferences sharedPreferences;
 
     }
 
-    public void showfbNativeBanner() {
+    private void showfbbanner() {
+        Log.e(TAG, "fbban2 " + getString(R.string.fbbanner));
+        FrameLayout adViewContainer = findViewById(R.id.fl_b);
+        bannerAdContainer = new com.facebook.ads.AdView(this, getString(R.string.fbbanner), com.facebook.ads.AdSize.BANNER_HEIGHT_90);
+        adViewContainer.addView(bannerAdContainer);
+        NativeAdListener nativeAdListener = new NativeAdListener() {
+            @Override
+            public void onMediaDownloaded(Ad ad) {
+            }
 
-        if (newaadhar10_spash_Activity.nativeBannerAd.isAdLoaded()) {
-            
-            View adView = NativeBannerAdView.render(this, newaadhar10_spash_Activity.nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
-            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
-            // Add the Native Banner Ad View to your ad container
-            nativeBannerContainer.addView(adView);
-        } else {
-            
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String Bannerid = sharedPreferences.getString("Bannerid", null);
-            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
-            nativeBannerAd = new NativeBannerAd(this, Bannerid);
-            Log.e(TAG, "fbnativebanner16 " + Bannerid);
-            NativeAdListener nativeAdListener = new NativeAdListener() {
-                @Override
-                public void onMediaDownloaded(Ad ad) {
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                Log.e("fbban2==>", adError.getErrorMessage());
 
-                }
+            }
 
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.e(TAG, "fbnativebanner 16 " + adError.getErrorMessage());
-                }
+            @Override
+            public void onAdLoaded(Ad ad) {
+                Log.e("fbban2==>", "onAdLoaded: ");
+            }
 
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    
-                    Log.e(TAG, "Native ad is loaded and ready to be displayed!");
-                    View adView = NativeBannerAdView.render(getApplicationContext(), nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
-                    // Add the Native Banner Ad View to your ad container
-                    nativeBannerContainer.addView(adView);
-                }
+            @Override
+            public void onAdClicked(Ad ad) {
+                Log.e("fbban2==>", "onAdClicked: ");
+            }
 
-                @Override
-                public void onAdClicked(Ad ad) {
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                Log.e("fbban2==>", "onLoggingImpression: ");
+            }
+        };
 
-                }
-
-                @Override
-                public void onLoggingImpression(Ad ad) {
-
-                }
-            };
-            nativeBannerAd.loadAd(
-                    nativeBannerAd.buildLoadAdConfig()
-                            .withAdListener(nativeAdListener)
-                            .build());
-
-
-        }
+        bannerAdContainer.loadAd(
+                bannerAdContainer.buildLoadAdConfig()
+                        .withAdListener(nativeAdListener)
+                        .build());
     }
 
 
     public void ShowFullAds() {
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String full = sharedPreferences.getString("full", null);
-        Log.e(TAG, "fbfull2 " + full);
+        Log.e(TAG, "fbfull2 " + getString(R.string.fbfull));
         try {
             if (newaadhar10_spash_Activity.interstitialAd1 != null && newaadhar10_spash_Activity.interstitialAd1.isAdLoaded()) {
                 newaadhar10_spash_Activity.interstitialAd1.show();
@@ -325,7 +318,7 @@ private SharedPreferences sharedPreferences;
             } else {
                 newaadhar10_spash_Activity.interstitialAd1.loadAd();
                 newaadhar10_spash_Activity.interstitialAd2.loadAd();
-                interstitialAd = new InterstitialAd(this, full);
+                interstitialAd = new InterstitialAd(this, getString(R.string.fbfull));
                 InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
 
 

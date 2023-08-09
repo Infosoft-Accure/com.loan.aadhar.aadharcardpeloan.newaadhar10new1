@@ -36,6 +36,7 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
 
     LinearLayout adView1;
     FrameLayout nativeAdContainer;
+    private com.facebook.ads.AdView bannerAdContainer;
 
 
     private SharedPreferences sharedPreferences;
@@ -52,7 +53,7 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
 
 
         loadfbNativeAd();
-        showfbNativeBanner();
+        showfbbanner();
         ShowFullAds();
 
         this.llNewLoan = (LinearLayout) findViewById(R.id.dashboard_llNewLoan);
@@ -118,15 +119,12 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
     }
 
     public void loadfbNativeAd() {
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String nativeid = sharedPreferences.getString("nativeid", null);
-
-        Log.e(TAG, "fbnative1 " + nativeid);
+        Log.e(TAG, "fbnative1 " + getString(R.string.fbnative));
         nativeAdContainer = findViewById(R.id.fl_adplaceholder);
         LayoutInflater inflater = this.getLayoutInflater();
-        adView1 = (LinearLayout) inflater.inflate(R.layout.newaadhar10_native_ad_layout9, nativeAdContainer, false);
+        adView1 = (LinearLayout) inflater.inflate(R.layout.newaadhar10_native_ad_layout, nativeAdContainer, false);
         nativeAdContainer.addView(adView1);
-        nativeAd1 = new NativeAd(getApplicationContext(), nativeid);
+        nativeAd1 = new NativeAd(getApplicationContext(), getString(R.string.fbnative));
         NativeAdListener nativeAdListener = new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
@@ -148,6 +146,9 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
 
                     return;
                 }
+
+
+                nativeAdContainer.setBackground(null);
                 inflateAd(nativeAd1, adView1, getApplicationContext());
             }
 
@@ -173,65 +174,47 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
 
     }
 
-    public void showfbNativeBanner() {
+    private void showfbbanner() {
+        Log.e(TAG, "fbban2 " + getString(R.string.fbbanner));
+        FrameLayout adViewContainer = findViewById(R.id.fl_b);
+        bannerAdContainer = new com.facebook.ads.AdView(this, getString(R.string.fbbanner), com.facebook.ads.AdSize.BANNER_HEIGHT_90);
+        adViewContainer.addView(bannerAdContainer);
+        NativeAdListener nativeAdListener = new NativeAdListener() {
+            @Override
+            public void onMediaDownloaded(Ad ad) {
+            }
 
-        if (newaadhar10_spash_Activity.nativeBannerAd.isAdLoaded()) {
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                Log.e("fbban2==>", adError.getErrorMessage());
 
-            View adView = NativeBannerAdView.render(this, newaadhar10_spash_Activity.nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
-            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
-            // Add the Native Banner Ad View to your ad container
-            nativeBannerContainer.addView(adView);
-        } else {
+            }
 
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String Bannerid = sharedPreferences.getString("Bannerid", null);
-            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
-            nativeBannerAd = new NativeBannerAd(this, Bannerid);
-            Log.e(TAG, "fbnativebanner16 " + Bannerid);
-            NativeAdListener nativeAdListener = new NativeAdListener() {
-                @Override
-                public void onMediaDownloaded(Ad ad) {
+            @Override
+            public void onAdLoaded(Ad ad) {
+                Log.e("fbban2==>", "onAdLoaded: ");
+            }
 
-                }
+            @Override
+            public void onAdClicked(Ad ad) {
+                Log.e("fbban2==>", "onAdClicked: ");
+            }
 
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.e(TAG, "fbnativebanner 16 " + adError.getErrorMessage());
-                }
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                Log.e("fbban2==>", "onLoggingImpression: ");
+            }
+        };
 
-                @Override
-                public void onAdLoaded(Ad ad) {
-
-                    Log.e(TAG, "Native ad is loaded and ready to be displayed!");
-                    View adView = NativeBannerAdView.render(getApplicationContext(), nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
-                    // Add the Native Banner Ad View to your ad container
-                    nativeBannerContainer.addView(adView);
-                }
-
-                @Override
-                public void onAdClicked(Ad ad) {
-
-                }
-
-                @Override
-                public void onLoggingImpression(Ad ad) {
-
-                }
-            };
-            nativeBannerAd.loadAd(
-                    nativeBannerAd.buildLoadAdConfig()
-                            .withAdListener(nativeAdListener)
-                            .build());
-
-
-        }
+        bannerAdContainer.loadAd(
+                bannerAdContainer.buildLoadAdConfig()
+                        .withAdListener(nativeAdListener)
+                        .build());
     }
 
 
     public void ShowFullAds() {
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String full = sharedPreferences.getString("full", null);
-        Log.e(TAG, "fbfull2 " + full);
+        Log.e(TAG, "fbfull2 " + getString(R.string.fbfull));
         try {
             if (newaadhar10_spash_Activity.interstitialAd1 != null && newaadhar10_spash_Activity.interstitialAd1.isAdLoaded()) {
                 newaadhar10_spash_Activity.interstitialAd1.show();
@@ -242,7 +225,7 @@ public class newaadhar10_consult_dashActivity extends AppCompatActivity {
             } else {
                 newaadhar10_spash_Activity.interstitialAd1.loadAd();
                 newaadhar10_spash_Activity.interstitialAd2.loadAd();
-                interstitialAd = new InterstitialAd(this, full);
+                interstitialAd = new InterstitialAd(this, getString(R.string.fbfull));
                 InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
 
 

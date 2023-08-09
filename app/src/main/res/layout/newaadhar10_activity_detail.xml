@@ -57,6 +57,7 @@
                     android:fontFamily="@font/poppins_bold"
                     android:textColor="#4E4E4E"
                     android:text="Hi"
+                    android:justificationMode="inter_word"
                     android:textSize="15dp"
                     android:textStyle="bold"
 
