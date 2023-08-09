@@ -110,6 +110,7 @@ private SharedPreferences sharedPreferences;
         Log.e(TAG, "fbnative1 " + getString(R.string.fbnative));
         nativeAdContainer = findViewById(R.id.fl_adplaceholder);
         LayoutInflater inflater = this.getLayoutInflater();
+
         adView1 = (LinearLayout) inflater.inflate(R.layout.newaadhar10_native_ad_layout, nativeAdContainer, false);
         nativeAdContainer.addView(adView1);
         nativeAd1 = new NativeAd(getApplicationContext(), getString(R.string.fbnative));

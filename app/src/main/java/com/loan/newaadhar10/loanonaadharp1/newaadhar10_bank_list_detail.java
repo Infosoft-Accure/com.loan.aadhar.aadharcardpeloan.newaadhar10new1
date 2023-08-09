@@ -203,7 +203,7 @@ public class newaadhar10_bank_list_detail extends AppCompatActivity {
         copy1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ClipboardManager) newaadhar10_bank_list_detail.this.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("label", str));
+                ((ClipboardManager) newaadhar10_bank_list_detail.this.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("label", str1));
                 Toast.makeText(newaadhar10_bank_list_detail.this, "Link Copied", Toast.LENGTH_SHORT).show();
             }
         });
@@ -211,7 +211,7 @@ public class newaadhar10_bank_list_detail extends AppCompatActivity {
         copy2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ClipboardManager) newaadhar10_bank_list_detail.this.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("label", str));
+                ((ClipboardManager) newaadhar10_bank_list_detail.this.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("label", str2));
                 Toast.makeText(newaadhar10_bank_list_detail.this, "Link Copied", Toast.LENGTH_SHORT).show();
             }
         });

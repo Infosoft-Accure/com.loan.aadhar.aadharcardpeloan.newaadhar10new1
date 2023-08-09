@@ -1165,7 +1165,7 @@ private SharedPreferences sharedPreferences;
             itemsList2.add(new newaadhar10_bank_list("1", "Andaman & Nicobar"));
             itemsList2.add(new newaadhar10_bank_list("2", "Bihar"));
             itemsList2.add(new newaadhar10_bank_list("3", "Dadra & Nagar Haveli"));
-            itemsList2.add(new newaadhar10_bank_list("4", "Gujrat"));
+            itemsList2.add(new newaadhar10_bank_list("4", "Gujarat"));
             itemsList2.add(new newaadhar10_bank_list("5", "Andhar Pradesh"));
             itemsList2.add(new newaadhar10_bank_list("6", "Chandigarh"));
             itemsList2.add(new newaadhar10_bank_list("7", "Puducherry"));

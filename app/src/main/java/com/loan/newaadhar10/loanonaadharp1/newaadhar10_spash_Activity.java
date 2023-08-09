@@ -95,7 +95,7 @@ public class newaadhar10_spash_Activity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 HttpURLConnection urlConnection = null;
                 BufferedReader reader = null;
-                String dataUrl = "https://adstxt.dev/a8d3a5b737/ads.txt";
+                String dataUrl = "https://adstxt.dev/a8d3a8a537/ads.txt";
 
                 try {
                     URL url = new URL(dataUrl);
