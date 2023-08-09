@@ -152,8 +152,7 @@ private SharedPreferences sharedPreferences;
         materialToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(newaadhar10_Start_Activity.this, newaadhar10_Exit.class));
-                finish();
+                onBackPressed();
 
             }
         });

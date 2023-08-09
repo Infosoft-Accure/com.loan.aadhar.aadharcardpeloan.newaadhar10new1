@@ -96,7 +96,6 @@
                         android:id="@+id/intro_llBtnNext"
                         android:layout_width="fill_parent"
                         android:layout_height="45.0dip"
-
                         android:background="@color/color_Primary"
                         android:gravity="center"
                         android:orientation="horizontal">
@@ -111,14 +110,6 @@
                             android:textColor="@color/white"
                             android:textSize="18.0sp" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15.0dip"
-                            android:layout_marginLeft="15.0dip"
-                            android:clickable="false"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/newaadhar10_ic_right_arrow_white" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

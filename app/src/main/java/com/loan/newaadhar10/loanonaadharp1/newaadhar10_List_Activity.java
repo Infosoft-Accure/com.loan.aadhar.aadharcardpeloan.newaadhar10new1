@@ -97,9 +97,6 @@ private SharedPreferences sharedPreferences;
             @Override
             public void onClick(View v) {
                 onBackPressed();
-                newaadhar10_spash_Activity.url_passing(newaadhar10_List_Activity.this);
-
-
                 ShowFullAds();
 
 
@@ -297,10 +294,10 @@ private SharedPreferences sharedPreferences;
                 }
             });
         } else if (newaadhar10_Start_Activity.list == 2) {
-            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan, "Home Loan"));
-            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan1, "Macine Loan"));
+            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan, "  Loan"));
+            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan1, "Machine Loan"));
             itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan2, "Business Loan"));
-            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan4, "Eduction Loan"));
+            itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan4, "Education Loan"));
             itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan5, "Car Loan"));
             itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan9, "Gold Loan"));
             itemsList.add(new newaadhar10_list_item(R.drawable.newaadhar10_loan6, "Aadhar Loan"));

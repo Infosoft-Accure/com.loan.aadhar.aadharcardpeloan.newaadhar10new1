@@ -18,36 +18,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:gravity="start"
             android:weightSum="2"
             android:orientation="horizontal"
             >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/newaadhar10_icon"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_gravity="center"
                 android:id="@+id/image1"
                 />
 
-            <TextView
-                android:id="@+id/money"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:text="Money"
-                android:textColor="#4E4E4E"
-                android:textSize="15dp" />
+
 
 
         </LinearLayout>
 
-
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Money"
+            android:textColor="#4E4E4E"
+            android:textSize="13dp" />
     </androidx.cardview.widget.CardView>
 
 
